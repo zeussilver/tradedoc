@@ -1,0 +1,63 @@
+[
+  {
+    "line_no": 1,
+    "rank": 1,
+    "hs_code": "691110",
+    "rationale": "Candidate for a licensed customs broker to review. Heading 6911 covers tableware, kitchenware and other household articles of porcelain or china, and subheading 6911.10 covers tableware and kitchenware. The invoice describes a porcelain dinner plate, so this subheading matches the description as written (GIR 1 and GIR 6), provided the body really is porcelain or china.",
+    "confidence": "medium",
+    "missing_info": [
+      "Supplier confirmation that the body is porcelain or china rather than stoneware or earthenware"
+    ]
+  },
+  {
+    "line_no": 1,
+    "rank": 2,
+    "hs_code": "691200",
+    "rationale": "Alternative candidate, relevant only if the plate is not porcelain or china. Heading 6912 covers ceramic tableware and kitchenware other than of porcelain or china, such as stoneware or earthenware.",
+    "confidence": "low",
+    "missing_info": [
+      "Body material of the plate (porcelain, stoneware or earthenware)"
+    ]
+  },
+  {
+    "line_no": 2,
+    "rank": 1,
+    "hs_code": "691200",
+    "rationale": "Candidate for a licensed customs broker to review. Heading 6912 covers ceramic tableware, kitchenware and other household articles other than of porcelain or china. The invoice describes a stoneware coffee mug; stoneware is a ceramic that is not porcelain or china, so 6912.00 matches the description as written (GIR 1 and GIR 6).",
+    "confidence": "medium",
+    "missing_info": [
+      "Supplier confirmation of the body material (stoneware, earthenware or porcelain)"
+    ]
+  },
+  {
+    "line_no": 2,
+    "rank": 2,
+    "hs_code": "691110",
+    "rationale": "Alternative candidate if the mug is in fact porcelain or china: subheading 6911.10 covers tableware and kitchenware of porcelain or china. Listed because the body material decides between headings 6911 and 6912 and should be confirmed first.",
+    "confidence": "low",
+    "missing_info": [
+      "Whether the mug body is porcelain or china"
+    ]
+  },
+  {
+    "line_no": 3,
+    "rank": 1,
+    "hs_code": "441911",
+    "rationale": "Candidate for a licensed customs broker to review. Heading 4419 covers tableware and kitchenware of wood and has separate subheadings for bamboo; 4419.11 covers bread boards, chopping boards and similar boards of bamboo. A 40 x 25 cm bamboo serving board may be a similar board, depending on its design and use.",
+    "confidence": "medium",
+    "missing_info": [
+      "Whether the board is a bread or chopping type board or a serving platter",
+      "Whether it is solid bamboo or a bamboo-based panel, and any parts of other materials such as handles or metal fittings"
+    ]
+  },
+  {
+    "line_no": 3,
+    "rank": 2,
+    "hs_code": "441919",
+    "rationale": "Alternative candidate: subheading 4419.19 covers other tableware and kitchenware of bamboo. It would apply if the item is a serving platter rather than a board similar to a bread or chopping board.",
+    "confidence": "low",
+    "missing_info": [
+      "Design and intended use of the board (serving, or bread and chopping)"
+    ]
+  }
+]

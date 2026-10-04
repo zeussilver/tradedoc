@@ -5,6 +5,7 @@ import (
 	"regexp"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // FieldError is one problem at one JSON path, e.g. "line_items[2].quantity".
@@ -38,12 +39,21 @@ func (v ValidationErrors) Err() error {
 	return v
 }
 
-const maxQuoteLen = 300
+// Size limits keep one record well inside a DynamoDB item (400 KB) and give
+// the model a clear target. Lengths count characters (runes), not bytes, so a
+// Chinese description gets the same allowance as an English one.
+const (
+	maxQuoteLen = 300
+	maxTextLen  = 1000 // any extracted string value
+	maxLines    = 200
+	maxCharges  = 20
+)
 
 var (
-	reCurrency = regexp.MustCompile(`^[A-Z]{3}$`) // ISO 4217
-	reCountry  = regexp.MustCompile(`^[A-Z]{2}$`) // ISO 3166-1 alpha-2
-	reHSCode   = regexp.MustCompile(`^\d{6}(\d{2})?$`)
+	reCurrency = regexp.MustCompile(`^[A-Z]{3}$`)             // ISO 4217
+	reCountry  = regexp.MustCompile(`^[A-Z]{2}$`)             // ISO 3166-1 alpha-2
+	reHSCode   = regexp.MustCompile(`^\d{6}$`)                // HS subheading; national digits are the broker's call
+	reDecimal  = regexp.MustCompile(`^\d{1,12}(\.\d{1,6})?$`) // up to 6 decimal places
 )
 
 // Incoterms 2020.
@@ -74,7 +84,7 @@ func checkMeta[T any](errs *ValidationErrors, path string, f Field[T], required 
 	q := strings.TrimSpace(f.Evidence.Quote)
 	if q == "" {
 		errs.add(path+".evidence.quote", "must not be empty")
-	} else if len(q) > maxQuoteLen {
+	} else if utf8.RuneCountInString(q) > maxQuoteLen {
 		errs.add(path+".evidence.quote", "must be at most %d characters", maxQuoteLen)
 	}
 }
@@ -89,8 +99,32 @@ func checkString(errs *ValidationErrors, path string, f Field[string], required 
 		errs.add(path, "must not be blank (use null if not found)")
 		return
 	}
-	if re != nil && !re.MatchString(v) {
+	if utf8.RuneCountInString(*f.Value) > maxTextLen {
+		errs.add(path, "must be at most %d characters", maxTextLen)
+		return
+	}
+	// Match the stored value, not the trimmed one: the checks parse exactly
+	// what is stored, so " 3.50" must be rejected here rather than silently
+	// skipped there.
+	if re != nil && !re.MatchString(*f.Value) {
 		errs.add(path, "must be %s", hint)
+	}
+}
+
+// checkQuantity requires a positive decimal such as "1200" or "1250.5".
+func checkQuantity(errs *ValidationErrors, path string, f Field[string]) {
+	checkString(errs, path, f, true, reDecimal, "a decimal number such as 1200 or 1250.5 (no thousands separator)")
+	if f.Present() && reDecimal.MatchString(*f.Value) && strings.Trim(*f.Value, "0.") == "" {
+		errs.add(path, "must be greater than 0")
+	}
+}
+
+func checkLineCount(errs *ValidationErrors, n int) {
+	switch {
+	case n == 0:
+		errs.add("line_items", "must contain at least one line")
+	case n > maxLines:
+		errs.add("line_items", "must have at most %d lines", maxLines)
 	}
 }
 

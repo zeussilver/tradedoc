@@ -11,22 +11,23 @@
       {
         "line_no": 1,
         "description":      { "value": "Porcelain dinner plate 27cm", "confidence": "high", "evidence": { "page": 1, "quote": "Porcelain dinner plate 27cm" } },
-        "quantity":         { "value": 1200, "confidence": "high", "evidence": { "page": 1, "quote": "1,200 PCS" } },
+        "quantity":         { "value": "1200", "confidence": "high", "evidence": { "page": 1, "quote": "1,200 PCS" } },
         "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "1,200 PCS" } },
-        "unit_price_minor": { "value": 350, "confidence": "high", "evidence": { "page": 1, "quote": "USD 3.50" } },
+        "unit_price":       { "value": "3.50", "confidence": "high", "evidence": { "page": 1, "quote": "USD 3.50" } },
         "line_total_minor": { "value": 420000, "confidence": "high", "evidence": { "page": 1, "quote": "USD 4,200.00" } },
         "origin_country":   { "value": "CN", "confidence": "medium", "evidence": { "page": 1, "quote": "Made in China" } }
       },
       {
         "line_no": 2,
         "description":      { "value": "Stoneware mug 350ml", "confidence": "high", "evidence": { "page": 1, "quote": "Stoneware mug 350ml" } },
-        "quantity":         { "value": 800, "confidence": "high", "evidence": { "page": 1, "quote": "800 PCS" } },
+        "quantity":         { "value": "800", "confidence": "high", "evidence": { "page": 1, "quote": "800 PCS" } },
         "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "800 PCS" } },
-        "unit_price_minor": { "value": 210, "confidence": "high", "evidence": { "page": 1, "quote": "USD 2.10" } },
+        "unit_price":       { "value": "2.10", "confidence": "high", "evidence": { "page": 1, "quote": "USD 2.10" } },
         "line_total_minor": { "value": 168000, "confidence": "high", "evidence": { "page": 1, "quote": "USD 1,680.00" } },
         "origin_country":   { "value": null }
       }
     ],
+    "charges": [],
     "total_minor": { "value": 588000, "confidence": "high", "evidence": { "page": 1, "quote": "TOTAL USD 5,880.00" } }
   }
 }

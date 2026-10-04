@@ -8,7 +8,12 @@ import (
 	"net/http"
 )
 
-const maxJSONBody = 1 << 20 // 1 MiB
+// maxJSONBody caps every JSON request body. The biggest one is a manual
+// extraction (a whole invoice typed in). 256 KiB is far more than a real
+// invoice needs, and keeps the stored reading inside DynamoDB's 400 KB item
+// limit; anything that still ends up too big to store gets 413 too_large
+// (see storeError) instead of a 500.
+const maxJSONBody = 256 << 10 // 256 KiB
 
 // Every error response has the same shape, so the frontend handles one format:
 // {"error": {"code": "...", "message": "...", "details": [...]}}
@@ -53,4 +58,13 @@ func decodeJSON(w http.ResponseWriter, r *http.Request, dst any) bool {
 		return false
 	}
 	return true
+}
+
+// orEmpty turns a nil slice into an empty one, so lists are sent as []
+// rather than null and the frontend never has to check for both.
+func orEmpty[T any](s []T) []T {
+	if s == nil {
+		return []T{}
+	}
+	return s
 }

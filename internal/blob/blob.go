@@ -1,35 +1,39 @@
-// Package blob stores uploaded files. Local disk for now; an S3
-// implementation of the same interface replaces it on day 6.
+// Package blob stores uploaded files: on local disk for development, in S3
+// on AWS. Both implement Store, so handlers don't know which one they use.
 package blob
 
 import (
 	"context"
+	"errors"
 	"io"
-	"os"
-	"path/filepath"
+	"time"
+)
+
+var (
+	ErrNotFound = errors.New("blob not found")
+	ErrTooLarge = errors.New("blob larger than allowed")
 )
 
 type Store interface {
+	// Put writes a file the server already holds (used by the multipart
+	// upload endpoint and tests).
 	Put(ctx context.Context, key string, r io.Reader) error
+	// Get reads a whole file, failing with ErrTooLarge rather than reading
+	// more than max bytes.
+	Get(ctx context.Context, key string, max int64) ([]byte, error)
+	// Size returns the stored size in bytes, or ErrNotFound.
+	Size(ctx context.Context, key string) (int64, error)
+	Delete(ctx context.Context, key string) error
+	// PresignPut returns a short-lived URL the browser can PUT the file to
+	// directly, so file bytes never pass through the API server.
+	PresignPut(ctx context.Context, key, contentType string, size int64, ttl time.Duration) (PresignedUpload, error)
 }
 
-type Local struct{ Dir string }
-
-// Put writes the file under Dir. Keys are server-generated IDs, never user
-// filenames, so a name like "../../etc/passwd" can't escape the folder.
-func (l Local) Put(_ context.Context, key string, r io.Reader) error {
-	path := filepath.Join(l.Dir, filepath.Base(key))
-	if err := os.MkdirAll(l.Dir, 0o750); err != nil {
-		return err
-	}
-	f, err := os.OpenFile(path, os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0o640)
-	if err != nil {
-		return err
-	}
-	if _, err := io.Copy(f, r); err != nil {
-		f.Close()
-		os.Remove(path)
-		return err
-	}
-	return f.Close()
+// PresignedUpload tells the client exactly how to send the file.
+// Headers must be sent as given: they are part of the signature.
+type PresignedUpload struct {
+	URL       string            `json:"url"`
+	Method    string            `json:"method"` // always PUT
+	Headers   map[string]string `json:"headers"`
+	ExpiresAt time.Time         `json:"expires_at"`
 }

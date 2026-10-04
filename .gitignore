@@ -2,3 +2,19 @@ data/
 *.exe
 /api
 .env
+
+# Build output (make lambda, make web)
+/dist/
+web/node_modules/
+internal/webui/dist/*
+!internal/webui/dist/.gitkeep
+
+# Terraform: provider downloads and state stay local. Keep .terraform.lock.hcl.
+deploy/terraform/.terraform/
+*.tfstate
+*.tfstate.*
+
+.DS_Store
+
+# Local editor/agent settings
+.claude/

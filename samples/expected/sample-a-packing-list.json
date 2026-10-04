@@ -1,0 +1,32 @@
+{
+  "packing_list_number": { "value": "PL-2026-0042", "confidence": "high", "evidence": { "page": 1, "quote": "Packing List No.: PL-2026-0042" } },
+  "invoice_ref":         { "value": "INV-2026-0042", "confidence": "high", "evidence": { "page": 1, "quote": "Invoice No.: INV-2026-0042" } },
+  "line_items": [
+    {
+      "line_no": 1,
+      "description":        { "value": "Porcelain dinner plate, 27 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Porcelain dinner plate, 27 cm" } },
+      "quantity":           { "value": "1200", "confidence": "high", "evidence": { "page": 1, "quote": "1,200" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 50, "confidence": "high", "evidence": { "page": 1, "quote": "50 CTNS" } },
+      "gross_weight_grams": { "value": 540000, "confidence": "high", "evidence": { "page": 1, "quote": "540.00" } }
+    },
+    {
+      "line_no": 2,
+      "description":        { "value": "Ceramic coffee mug, 350 ml", "confidence": "high", "evidence": { "page": 1, "quote": "Ceramic coffee mug, 350 ml" } },
+      "quantity":           { "value": "780", "confidence": "high", "evidence": { "page": 1, "quote": "780" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 20, "confidence": "high", "evidence": { "page": 1, "quote": "20 CTNS" } },
+      "gross_weight_grams": { "value": 210000, "confidence": "high", "evidence": { "page": 1, "quote": "210.00" } }
+    },
+    {
+      "line_no": 3,
+      "description":        { "value": "Bamboo serving board, 40 x 25 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Bamboo serving board, 40 x 25 cm" } },
+      "quantity":           { "value": "300", "confidence": "high", "evidence": { "page": 1, "quote": "300" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 12, "confidence": "high", "evidence": { "page": 1, "quote": "12 CTNS" } },
+      "gross_weight_grams": { "value": 186000, "confidence": "high", "evidence": { "page": 1, "quote": "186.00" } }
+    }
+  ],
+  "total_packages":           { "value": 84, "confidence": "high", "evidence": { "page": 1, "quote": "84 CTNS" } },
+  "total_gross_weight_grams": { "value": 936000, "confidence": "high", "evidence": { "page": 1, "quote": "936.00" } }
+}

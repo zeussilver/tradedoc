@@ -1,0 +1,32 @@
+{
+  "packing_list_number": { "value": "PL-2026-0057", "confidence": "high", "evidence": { "page": 1, "quote": "Packing List No.: PL-2026-0057" } },
+  "invoice_ref":         { "value": "INV-2026-0057", "confidence": "high", "evidence": { "page": 1, "quote": "Invoice No.: INV-2026-0057" } },
+  "line_items": [
+    {
+      "line_no": 1,
+      "description":        { "value": "100% cotton terry bath towel, 70 x 140 cm", "confidence": "high", "evidence": { "page": 1, "quote": "100% cotton terry bath towel, 70 x 140 cm" } },
+      "quantity":           { "value": "2000", "confidence": "high", "evidence": { "page": 1, "quote": "2,000" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 40, "confidence": "high", "evidence": { "page": 1, "quote": "40 CTNS" } },
+      "gross_weight_grams": { "value": 620000, "confidence": "high", "evidence": { "page": 1, "quote": "620.00" } }
+    },
+    {
+      "line_no": 2,
+      "description":        { "value": "Polyester fleece throw blanket, 127 x 152 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Polyester fleece throw blanket, 127 x 152 cm" } },
+      "quantity":           { "value": "500", "confidence": "high", "evidence": { "page": 1, "quote": "500" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 25, "confidence": "high", "evidence": { "page": 1, "quote": "25 CTNS" } },
+      "gross_weight_grams": { "value": 310000, "confidence": "high", "evidence": { "page": 1, "quote": "310.00" } }
+    },
+    {
+      "line_no": 3,
+      "description":        { "value": "Cotton face cloth, 30 x 30 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Cotton face cloth, 30 x 30 cm" } },
+      "quantity":           { "value": "5000", "confidence": "high", "evidence": { "page": 1, "quote": "5,000" } },
+      "unit":               { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "packages":           { "value": 20, "confidence": "high", "evidence": { "page": 1, "quote": "20 CTNS" } },
+      "gross_weight_grams": { "value": 260000, "confidence": "high", "evidence": { "page": 1, "quote": "260.00" } }
+    }
+  ],
+  "total_packages":           { "value": 85, "confidence": "high", "evidence": { "page": 1, "quote": "85 CTNS" } },
+  "total_gross_weight_grams": { "value": 1190000, "confidence": "high", "evidence": { "page": 1, "quote": "1,190.00" } }
+}

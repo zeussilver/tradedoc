@@ -1,0 +1,39 @@
+{
+  "invoice_number": { "value": "INV-2026-0057", "confidence": "high", "evidence": { "page": 1, "quote": "Invoice No.: INV-2026-0057" } },
+  "invoice_date":   { "value": "2026-09-22", "confidence": "high", "evidence": { "page": 1, "quote": "Date: 22 Sep 2026" } },
+  "seller_name":    { "value": "Blue Gum Textiles Co., Ltd.", "confidence": "high", "evidence": { "page": 1, "quote": "Blue Gum Textiles Co., Ltd." } },
+  "buyer_name":     { "value": "Southbank Homewares Pty Ltd", "confidence": "high", "evidence": { "page": 1, "quote": "Southbank Homewares Pty Ltd" } },
+  "currency":       { "value": "USD", "confidence": "high", "evidence": { "page": 1, "quote": "Currency: USD" } },
+  "incoterm":       { "value": "CIF", "confidence": "high", "evidence": { "page": 1, "quote": "Terms of delivery: CIF Melbourne (Incoterms 2020)" } },
+  "line_items": [
+    {
+      "line_no": 1,
+      "description":      { "value": "100% cotton terry bath towel, 70 x 140 cm", "confidence": "high", "evidence": { "page": 1, "quote": "100% cotton terry bath towel, 70 x 140 cm" } },
+      "quantity":         { "value": "2000", "confidence": "high", "evidence": { "page": 1, "quote": "2,000" } },
+      "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "unit_price":       { "value": "2.85", "confidence": "high", "evidence": { "page": 1, "quote": "2.85" } },
+      "line_total_minor": { "value": 570000, "confidence": "high", "evidence": { "page": 1, "quote": "5,700.00" } },
+      "origin_country":   { "value": "VN", "confidence": "medium", "evidence": { "page": 1, "quote": "Country of origin: Vietnam" } }
+    },
+    {
+      "line_no": 2,
+      "description":      { "value": "Polyester fleece throw blanket, 127 x 152 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Polyester fleece throw blanket, 127 x 152 cm" } },
+      "quantity":         { "value": "500", "confidence": "high", "evidence": { "page": 1, "quote": "500" } },
+      "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "unit_price":       { "value": "4.40", "confidence": "high", "evidence": { "page": 1, "quote": "4.40" } },
+      "line_total_minor": { "value": 220000, "confidence": "high", "evidence": { "page": 1, "quote": "2,200.00" } },
+      "origin_country":   { "value": "VN", "confidence": "medium", "evidence": { "page": 1, "quote": "Country of origin: Vietnam" } }
+    },
+    {
+      "line_no": 3,
+      "description":      { "value": "Cotton face cloth, 30 x 30 cm", "confidence": "high", "evidence": { "page": 1, "quote": "Cotton face cloth, 30 x 30 cm" } },
+      "quantity":         { "value": "5000", "confidence": "high", "evidence": { "page": 1, "quote": "5,000" } },
+      "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "PCS" } },
+      "unit_price":       { "value": "0.385", "confidence": "high", "evidence": { "page": 1, "quote": "0.385" } },
+      "line_total_minor": { "value": 192500, "confidence": "high", "evidence": { "page": 1, "quote": "1,925.00" } },
+      "origin_country":   { "value": "VN", "confidence": "medium", "evidence": { "page": 1, "quote": "Country of origin: Vietnam" } }
+    }
+  ],
+  "charges": [],
+  "total_minor": { "value": 982500, "confidence": "high", "evidence": { "page": 1, "quote": "9,825.00" } }
+}
