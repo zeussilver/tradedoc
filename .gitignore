@@ -1,0 +1,4 @@
+data/
+*.exe
+/api
+.env

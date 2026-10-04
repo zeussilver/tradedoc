@@ -1,0 +1,32 @@
+{
+  "source": "manual",
+  "payload": {
+    "invoice_number": { "value": "INV-2026-0042", "confidence": "high", "evidence": { "page": 1, "quote": "Invoice No: INV-2026-0042" } },
+    "invoice_date":   { "value": "2026-09-15",    "confidence": "high", "evidence": { "page": 1, "quote": "Date: 15 Sep 2026" } },
+    "seller_name":    { "value": "Harbour Ceramics Co. Ltd", "confidence": "high", "evidence": { "page": 1, "quote": "Seller: Harbour Ceramics Co. Ltd" } },
+    "buyer_name":     { "value": "Southbank Homewares Pty Ltd", "confidence": "high", "evidence": { "page": 1, "quote": "Buyer: Southbank Homewares Pty Ltd" } },
+    "currency":       { "value": "USD", "confidence": "high", "evidence": { "page": 1, "quote": "Currency: USD" } },
+    "incoterm":       { "value": "FOB", "confidence": "medium", "evidence": { "page": 1, "quote": "Terms: FOB Ningbo" } },
+    "line_items": [
+      {
+        "line_no": 1,
+        "description":      { "value": "Porcelain dinner plate 27cm", "confidence": "high", "evidence": { "page": 1, "quote": "Porcelain dinner plate 27cm" } },
+        "quantity":         { "value": 1200, "confidence": "high", "evidence": { "page": 1, "quote": "1,200 PCS" } },
+        "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "1,200 PCS" } },
+        "unit_price_minor": { "value": 350, "confidence": "high", "evidence": { "page": 1, "quote": "USD 3.50" } },
+        "line_total_minor": { "value": 420000, "confidence": "high", "evidence": { "page": 1, "quote": "USD 4,200.00" } },
+        "origin_country":   { "value": "CN", "confidence": "medium", "evidence": { "page": 1, "quote": "Made in China" } }
+      },
+      {
+        "line_no": 2,
+        "description":      { "value": "Stoneware mug 350ml", "confidence": "high", "evidence": { "page": 1, "quote": "Stoneware mug 350ml" } },
+        "quantity":         { "value": 800, "confidence": "high", "evidence": { "page": 1, "quote": "800 PCS" } },
+        "unit":             { "value": "PCS", "confidence": "high", "evidence": { "page": 1, "quote": "800 PCS" } },
+        "unit_price_minor": { "value": 210, "confidence": "high", "evidence": { "page": 1, "quote": "USD 2.10" } },
+        "line_total_minor": { "value": 168000, "confidence": "high", "evidence": { "page": 1, "quote": "USD 1,680.00" } },
+        "origin_country":   { "value": null }
+      }
+    ],
+    "total_minor": { "value": 588000, "confidence": "high", "evidence": { "page": 1, "quote": "TOTAL USD 5,880.00" } }
+  }
+}
